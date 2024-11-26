@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fut</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-black">
+    <header class="p-4 bg-black text-[#9cff1e] shadow-md">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="logo.png" alt="Logo" class="w-28 md:w-40">
+            </div>
+
+            <!-- Mobile (Icons only) -->
+            <div class="flex md:hidden items-center space-x-4 relative">
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-search"></i></button> <!-- Search icon -->
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button> <!-- Profile icon -->
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button> <!-- Notification icon -->
+                <button id="menuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+
+                <!-- Mobile Menu -->
+                <nav id="mobileMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                    <ul class="flex flex-col space-y-2 p-2">
+                        <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                        <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Tablet (Search bar + Icons) -->
+            <div class="hidden md:flex lg:hidden items-center space-x-4 w-full pl-10 relative">
+                <input type="text" placeholder="Rechercher..." class="flex-grow px-2 py-1 rounded-md bg-gray-500">
+                <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+                <button id="tabletMenuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+
+                <!-- Tablet Menu -->
+                <nav id="tabletMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                    <ul class="flex flex-col space-y-2 p-2">
+                        <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                        <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Desktop (Full Navigation) -->
+            <nav class="hidden lg:flex items-center space-x-6 pl-8 pr-8">
+                <a href="#" class="hover:text-blue-300">Home</a>
+                <a href="#" class="hover:text-blue-300">Créer une Équipe</a>
+                <a href="#" class="hover:text-blue-300">Tactiques</a>
+                <a href="#" class="hover:text-blue-300">Joueurs</a>
+                <a href="#" class="hover:text-blue-300">À propos</a>
+            </nav>
+            <div class="hidden lg:flex items-center space-x-4">
+                <input type="text" placeholder="Rechercher..." class="px-2 py-1 rounded-md bg-gray-500 text-[#9cff1e]">
+                <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-black min-h-screen flex items-center justify-center">
+        <div class="w-full sm:w-9/12 md:w-7/12 lg:w-6/12 bg-gray-800 p-8 rounded-lg shadow-lg space-y-6 text-white mx-auto">
+            <h1 class="text-3xl font-bold text-green-500 text-center">EA FC 25 - Ultimate Team</h1>
+            <form id="teamForm" class="space-y-6">
+                <!-- Nom de l'équipe -->
+                <div class="space-y-2">
+                    <label for="teamName" class="block font-medium text-lg">Nom de l'équipe</label>
+                    <input type="text" id="teamName" name="teamName" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500">
+                </div>
+                <!-- Formation -->
+                <div class="space-y-2">
+                    <label for="formation" class="block font-medium text-lg">Formation</label>
+                    <select id="formation" name="formation" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500">
+                        <option value="">Choisissez une formation</option>
+                        <option value="4-4-2">4-4-2</option>
+                        <option value="4-3-3">4-3-3</option>
+                        <option value="3-5-2">3-5-2</option>
+                        <option value="5-3-2">5-3-2</option>
+                    </select>
+                </div>
+                <!-- Nom de l'entraîneur -->
+                <div class="space-y-2">
+                    <label for="coachName" class="block font-medium text-lg">Nom de l'entraîneur</label>
+                    <input type="text" id="coachName" name="coachName" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500">
+                </div>
+                <!-- Boutons -->
+                <div class="flex flex-col space-y-4">
+                    <button type="submit" 
+                        class="w-full py-3 px-4 bg-green-500 text-black font-bold rounded-md hover:bg-green-600">
+                        Créer l'équipe
+                    </button>
+                    <button type="reset" 
+                        class="w-full py-3 px-4 bg-gray-700 text-white font-bold rounded-md hover:bg-gray-600">
+                        Réinitialiser
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Formulaire pour ajouter un joueur -->
+    <section class="w-full sm:w-9/12 md:w-7/12 lg:w-6/12 bg-gray-800 p-8 rounded-lg shadow-lg space-y-6 text-white mx-auto">
+        <h1 class="text-3xl font-bold text-green-500 text-center">Ajouter un Joueur</h1>
+        <form id="playerForm" class="space-y-6">
+            <!-- Nom du joueur -->
+            <div class="space-y-2">
+                <label for="playerName" class="block font-medium text-lg">Nom du joueur</label>
+                <input type="text" id="playerName" name="playerName" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Photo -->
+            <div class="space-y-2">
+                <label for="photo" class="block font-medium text-lg">Photo (URL)</label>
+                <input type="url" id="photo" name="photo" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Position -->
+            <div class="space-y-2">
+                <label for="position" class="block font-medium text-lg">Position</label>
+                <select id="position" name="position" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                    <option value="">Choisissez une position</option>
+                    <option value="Attaquant">Attaquant</option>
+                    <option value="Milieu">Milieu</option>
+                    <option value="Défenseur">Défenseur</option>
+                    <option value="Gardien">Gardien</option>
+                </select>
+            </div>
+            
+            <!-- Nationalité -->
+            <div class="space-y-2">
+                <label for="nationality" class="block font-medium text-lg">Nationalité</label>
+                <input type="text" id="nationality" name="nationality" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Drapeau -->
+            <div class="space-y-2">
+                <label for="flag" class="block font-medium text-lg">URL du Drapeau</label>
+                <input type="url" id="flag" name="flag" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Club -->
+            <div class="space-y-2">
+                <label for="club" class="block font-medium text-lg">Club</label>
+                <input type="text" id="club" name="club" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Logo -->
+            <div class="space-y-2">
+                <label for="logo" class="block font-medium text-lg">URL du Logo</label>
+                <input type="url" id="logo" name="logo" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Rating -->
+            <div class="space-y-2">
+                <label for="rating" class="block font-medium text-lg">Note du joueur (1-100)</label>
+                <input type="number" id="rating" name="rating" min="1" max="100" 
+                    class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+            </div>
+            
+            <!-- Statistiques -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                    <label for="diving" class="block font-medium text-lg">Diving</label>
+                    <input type="number" id="diving" name="diving" min="1" max="100" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="handling" class="block font-medium text-lg">Handling</label>
+                    <input type="number" id="handling" name="handling" min="1" max="100" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="kicking" class="block font-medium text-lg">Kicking</label>
+                    <input type="number" id="kicking" name="kicking" min="1" max="100" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="reflexes" class="block font-medium text-lg">Reflexes</label>
+                    <input type="number" id="reflexes" name="reflexes" min="1" max="100" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="speed" class="block font-medium text-lg">Speed</label>
+                    <input type="number" id="speed" name="speed" min="1" max="100" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                </div>
+                <div class="space-y-2">
+                    <label for="positioning" class="block font-medium text-lg">Positioning</label>
+                    <input type="number" id="positioning" name="positioning" min="1" max="100" 
+                        class="w-full p-3 text-black rounded-md focus:outline-none focus:ring focus:ring-green-500" required>
+                </div>
+            </div>
+            
+            <!-- Boutons -->
+            <div class="flex flex-col space-y-4">
+                <button type="submit" 
+                    class="w-full py-3 px-4 bg-green-500 text-black font-bold rounded-md hover:bg-green-600">
+                    Ajouter le joueur
+                </button>
+                <button type="reset" 
+                    class="w-full py-3 px-4 bg-gray-700 text-white font-bold rounded-md hover:bg-gray-600">
+                    Réinitialiser
+                </button>
+            </div>
+        </form>
+    </section>
+    
+    <!-- Liste des joueurs -->
+    <section class="w-full sm:w-9/12 md:w-7/12 lg:w-6/12 bg-gray-800 p-8 rounded-lg shadow-lg space-y-6 text-white mx-auto mt-8">
+    <h2 class="text-2xl font-bold text-green-500 text-center">Liste des joueurs</h2>
+    <ul id="playersList" class="space-y-4">
+        <!-- Les joueurs ajoutés apparaîtront ici -->
+    </ul>
+    </section>
+
+    <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle tablet menu
+        const tabletMenuToggle = document.getElementById('tabletMenuToggle');
+        const tabletMenu = document.getElementById('tabletMenu');
+        tabletMenuToggle.addEventListener('click', () => {
+            tabletMenu.classList.toggle('hidden');
+        });
+
+        // Fonction pour ajouter un joueur à la liste
+const playerForm = document.getElementById('playerForm');
+const playersList = document.getElementById('playersList');
+
+playerForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const playerName = document.getElementById('playerName').value;
+    const position = document.getElementById('position').value;
+    const rating = document.getElementById('rating').value;
+
+    if (playerName && position && rating) {
+        const playerItem = document.createElement('li');
+        playerItem.classList.add('bg-gray-700', 'p-4', 'rounded-md');
+        playerItem.innerHTML = `
+            <p><strong>Nom :</strong> ${playerName}</p>
+            <p><strong>Position :</strong> ${position}</p>
+            <p><strong>Note :</strong> ${rating}</p>
+        `;
+
+        // Ajouter le joueur à la liste
+        playersList.appendChild(playerItem);
+
+        // Réinitialiser le formulaire
+        playerForm.reset();
+    } else {
+        alert('Tous les champs sont requis.');
+    }
+});
+
+    </script>
+</body>
+</html>
