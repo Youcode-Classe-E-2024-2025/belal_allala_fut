@@ -53,11 +53,11 @@ fetch('./assets/data/players.json')
 
   .then(data => {
     localStorage.setItem('playersData', JSON.stringify(data.players));
-    console.log('les données des joueurs ont été sauvegardées dans le localStorage.');
+    // console.log('les données des joueurs ont été sauvegardées dans le localStorage.');
   })
 
   .catch(error => {
-    // console.error('Erreur:', error);
+    console.error('Erreur:', error);
   });
 
 const playersData = JSON.parse(localStorage.getItem("playersData")) ;
