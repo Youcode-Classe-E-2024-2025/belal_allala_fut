@@ -61,11 +61,11 @@ fetch('./assets/data/players.json')
   });
 
 const playersData = JSON.parse(localStorage.getItem("playersData")) ;
-const playersTable = document.getElementById("playersTable");
+// const playersTable = document.getElementById("playersTable");
 
 if (playersData.length > 0) {
   playersData.forEach((player) => {
-    // const row = document.createElement("tr");
+    const row = document.createElement("tr");
     row.innerHTML = `
       <td class="border border-gray-700 p-4">
         <img src="${player.photo}" alt="${player.name}" class="w-12 h-auto rounded">
