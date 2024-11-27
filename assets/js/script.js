@@ -83,7 +83,7 @@ if (playersData.length > 0) {
 } else {
   playersTable.innerHTML = `
     <tr>
-      <td colspan="5" class="text-center text-gray-500 p-4">Aucun joueur trouvé</td>
+      // <td colspan="5" class="text-center text-gray-500 p-4">Aucun joueur trouvé</td>
     </tr>
   `;
 }
