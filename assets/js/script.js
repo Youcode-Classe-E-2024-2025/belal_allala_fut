@@ -70,8 +70,8 @@ if (playersData.length > 0) {
       <td class="border border-gray-700 p-4">
         <img src="${player.photo}" alt="${player.name}" class="w-12 h-auto rounded">
       </td>
-      <td class="border border-gray-700 p-4 font-medium">${player.name}</td>
-      // <td class="border border-gray-700 p-4">${player.position}</td>
+      // <td class="border border-gray-700 p-4 font-medium">${player.name}</td>
+      <td class="border border-gray-700 p-4">${player.position}</td>
       <td class="border border-gray-700 p-4 flex items-center gap-2">
         <img src="${player.logo}" alt="${player.club}" title="${player.club}" class="w-8 h-auto">
         <span>${player.club}</span>
