@@ -57,10 +57,10 @@ fetch('./assets/data/players.json')
   })
 
   .catch(error => {
-    console.error('Erreur:', error);
+    // console.error('Erreur:', error);
   });
 
-// const playersData = JSON.parse(localStorage.getItem("playersData")) ;
+const playersData = JSON.parse(localStorage.getItem("playersData")) ;
 const playersTable = document.getElementById("playersTable");
 
 if (playersData.length > 0) {
