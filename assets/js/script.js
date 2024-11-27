@@ -76,9 +76,9 @@ if (playersData.length > 0) {
         <img src="${player.logo}" alt="${player.club}" title="${player.club}" class="w-8 h-auto">
         <span>${player.club}</span>
       </td>
-      <td class="border border-gray-700 p-4 text-center font-semibold">${player.rating}</td>
+      // <td class="border border-gray-700 p-4 text-center font-semibold">${player.rating}</td>
     `;
-    // playersTable.appendChild(row);
+    playersTable.appendChild(row);
   });
 } else {
   playersTable.innerHTML = `
