@@ -78,12 +78,12 @@ if (playersData.length > 0) {
       </td>
       <td class="border border-gray-700 p-4 text-center font-semibold">${player.rating}</td>
     `;
-    playersTable.appendChild(row);
+    // playersTable.appendChild(row);
   });
 } else {
-  // playersTable.innerHTML = `
-  //   <tr>
-  //     <td colspan="5" class="text-center text-gray-500 p-4">Aucun joueur trouvé</td>
-  //   </tr>
-  // `;
+  playersTable.innerHTML = `
+    <tr>
+      <td colspan="5" class="text-center text-gray-500 p-4">Aucun joueur trouvé</td>
+    </tr>
+  `;
 }
