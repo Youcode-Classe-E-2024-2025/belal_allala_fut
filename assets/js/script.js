@@ -41,3 +41,49 @@ if (playerName && position && rating) {
  alert('Tous les champs sont requis.');
 }
 });
+// -------------------------------------------------------
+fetch('./assets/data/players.json') 
+
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erreur de chargement du fichier JSON qui contient data ');
+    }
+    return response.json();
+  })
+
+  .then(data => {
+    localStorage.setItem('playersData', JSON.stringify(data.players));
+    console.log('les données des joueurs ont été sauvegardées dans le localStorage.');
+  })
+
+  .catch(error => {
+    console.error('Erreur:', error);
+  });
+
+const playersData = JSON.parse(localStorage.getItem("playersData")) ;
+const playersTable = document.getElementById("playersTable");
+
+if (playersData.length > 0) {
+  playersData.forEach((player) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td class="border border-gray-700 p-4">
+        <img src="${player.photo}" alt="${player.name}" class="w-12 h-auto rounded">
+      </td>
+      <td class="border border-gray-700 p-4 font-medium">${player.name}</td>
+      <td class="border border-gray-700 p-4">${player.position}</td>
+      <td class="border border-gray-700 p-4 flex items-center gap-2">
+        <img src="${player.logo}" alt="${player.club}" title="${player.club}" class="w-8 h-auto">
+        <span>${player.club}</span>
+      </td>
+      <td class="border border-gray-700 p-4 text-center font-semibold">${player.rating}</td>
+    `;
+    playersTable.appendChild(row);
+  });
+} else {
+  playersTable.innerHTML = `
+    <tr>
+      <td colspan="5" class="text-center text-gray-500 p-4">Aucun joueur trouvé</td>
+    </tr>
+  `;
+}
