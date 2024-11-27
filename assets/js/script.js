@@ -68,8 +68,8 @@ if (playersData.length > 0) {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td class="border border-gray-700 p-4">
-        <img src="${player.photo}" alt="${player.name}" class="w-12 h-auto rounded">
-      // </td>
+        // <img src="${player.photo}" alt="${player.name}" class="w-12 h-auto rounded">
+      </td>
       <td class="border border-gray-700 p-4 font-medium">${player.name}</td>
       <td class="border border-gray-700 p-4">${player.position}</td>
       <td class="border border-gray-700 p-4 flex items-center gap-2">
