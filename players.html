@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/output.css">
+    <title>fut</title>
+</head>
+<body>
+    <header class=" bg-black fixed left-0 top-0 w-full z-10">
+
+        <div class="flex justify-between py-4 px-10 sm:px-20 mx-auto max-w-screen-xl text-white">
+            <div class="logo text-xl font-semibold font-roboto"><img src="logo.png" alt="Logo" width="150px" ></div>
+            
+        </div>
+    </header>
+        <div class="cnt max-w-[1280px] mx-auto">
+            <main class="main-app w-full flex flex-col items-center relative">
+                <form class="form-add-player text-xs lg:text-lg mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900  gap-1 flex flex-col md:grid md:grid-cols-2 md:gap-4 text-white  p-4  rounded-md hidden md:hidden">
+                    <!-- Player Name -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="  name" class="mr-2">Player Name:</label>
+                        <input type="text" id="name" name="name" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Player Photo URL -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="photo" class="mr-2">Player Photo URL:</label>
+                        <input type="url" id="photo" name="photo" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Position -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="position" class="mr-2">Position:</label>
+         
+                        <select name="position" id="position" required class="p-2 bg-stone-700 text-white rounded self-stretch">
+                            <option value="GK">GK</option>
+                            <option value="LB">LB</option>
+                            <option value="CB">CB</option>
+                            <option value="RB">RB</option>
+                            <option value="CM">CM</option>
+                            <option value="CDM">CDM</option>
+                            <option value="LW">LW</option>
+                            <option value="ST">ST</option>
+                            <option value="RW">RW</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Nationality -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="nationality" class="mr-2">Nationality:</label>
+                        <input type="text" id="nationality" name="nationality" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Flag URL -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="flag" class="mr-2">Flag URL:</label>
+                        <input type="url" id="flag" name="flag" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Club -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="club" class="mr-2">Club:</label>
+                        <input type="text" id="club" name="club" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Club Logo URL -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="logo" class="mr-2">Club Logo URL:</label>
+                        <input type="url" id="logo" name="logo" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="col-span-2 text-center mt-4">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Player</button>
+                        <button class="btn-close-form bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    </div>
+                </form>
+                <form class="form-modify-player text-xs lg:text-lg mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900 grid grid-cols-2 gap-4 text-white p-6 p-4 hidden rounded-md">
+                    <!-- Rating -->
+                    <div class="flex flex-col items-center ">
+                        <img/>
+                        <h2 class="name"></h2>
+                        </div>
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="rating" class="mr-2">Rating:</label>
+                        <input type="number" id="rating" name="rating"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Pace -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="pace" class="mr-2">Pace:</label>
+                        <input type="number" id="pace" name="pace"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Shooting -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="shooting" class="mr-2">Shooting:</label>
+                        <input type="number" id="shooting" name="shooting"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Passing -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="passing" class="mr-2">Passing:</label>
+                        <input type="number" id="passing" name="passing"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Dribbling -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="dribbling" class="mr-2">Dribbling:</label>
+                        <input type="number" id="dribbling" name="dribbling"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Defending -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="defending" class="mr-2">Defending:</label>
+                        <input type="number" id="defending" name="defending"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Physical -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="physical" class="mr-2">Physical:</label>
+                        <input type="number" id="physical" name="physical"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Submit and Cancel Buttons -->
+                    <div class="col-span-2 text-center mt-4">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                        <button class="btn-delete-player bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <button class="btn-close-form bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                        
+                    </div>
+                </form>
+                <form class="form-modify-keeper mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900 grid grid-cols-2 gap-4 text-white p-6 p-4 hidden rounded-md">
+                    <!-- Rating -->
+                    <div class="flex flex-col items-center ">
+                        <img/>
+                        <h2 class="name"></h2>
+                        </div>
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="rating" class="mr-2">Rating:</label>
+                        <input type="number" id="rating" name="rating"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Pace -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="pace" class="mr-2">Diving:</label>
+                        <input type="number" id="diving" name="pace"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Shooting -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="shooting" class="mr-2">Handling:</label>
+                        <input type="number" id="handling" name="shooting"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Passing -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="passing" class="mr-2">kicking:</label>
+                        <input type="number" id="kicking" name="passing"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Dribbling -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="dribbling" class="mr-2">Reflexes:</label>
+                        <input type="number" id="reflexes" name="dribbling"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Defending -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="defending" class="mr-2">Speed:</label>
+                        <input type="number" id="speed" name="defending"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Physical -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="physical" class="mr-2">Positioning:</label>
+                        <input type="number" id="positioning" name="physical"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Submit and Cancel Buttons -->
+                    <div class="col-span-2 text-center mt-4">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                        <button class="btn-delete-player bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <button class="btn-close-form bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                        
+                    </div>
+                </form>
+                <div>
+
+                    <button  class='btn-add-player text-white w-fit bg-black mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20'>Add Player</button>
+                    <a href="index.html" class='btn-add-player text-white w-fit bg-black mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20'>Back to Formation</a>
+                </div>
+                <div class="players-container max-w-[700px] mx-auto  pt-14 flex justify-center flex-wrap gap-4  ">
+                    
+                </div>
+            </main>
+        </div>
+    <script src="assets/js/player.js"></script>
+</body>
+</html>
