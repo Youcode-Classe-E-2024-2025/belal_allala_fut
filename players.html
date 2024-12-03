@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/output.css">
+    <title>fut</title>
+</head>
+<body>
+    <header class="p-4 bg-black text-[#9cff1e] shadow-md">
+        <div class="flex justify-between items-center">
+            <!-- logo -->
+            <div class="flex items-center">
+                <img src="logo.png" alt="Logo" class="w-28 md:w-40">
+            </div>
+
+            <!-- mobile respo -->
+            <div class="flex md:hidden items-center space-x-4 relative">
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-search"></i></button> <!-- Search icon -->
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button> <!-- Profile icon -->
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button> <!-- Notification icon -->
+                <button id="menuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+
+                <!-- mobile menu -->
+                <nav id="mobileMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                    <ul class="flex flex-col space-y-2 p-2">
+                        <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                        <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- tablet respo -->
+            <div class="hidden md:flex lg:hidden items-center space-x-4 w-full pl-10 relative">
+                <input type="text" placeholder="Rechercher..." class="flex-grow px-2 py-1 rounded-md bg-gray-500">
+                <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+                <button id="tabletMenuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+
+                <!-- tablet menu -->
+                <nav id="tabletMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                    <ul class="flex flex-col space-y-2 p-2">
+                        <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                        <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- desktop respo -->
+            <nav class="hidden lg:flex items-center space-x-6 pl-8 pr-8">
+                <a href="#" class="hover:text-blue-300">Home</a>
+                <a href="#" class="hover:text-blue-300">Créer une Équipe</a>
+                <a href="#" class="hover:text-blue-300">Tactiques</a>
+                <a href="#" class="hover:text-blue-300">Joueurs</a>
+                <a href="#" class="hover:text-blue-300">À propos</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <input type="text" placeholder="Rechercher..." class="px-2 py-1 rounded-md bg-gray-500 text-[#9cff1e]">
+                <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+            </div>
+        </div>
+    </header>
+        <div class="cnt max-w-[1280px] mx-auto">
+            <main class="main-app w-full flex flex-col items-center relative">
+                <form class="form-add-player text-xs lg:text-lg mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900  gap-1 flex flex-col md:grid md:grid-cols-2 md:gap-4 text-white  p-4  rounded-md hidden md:hidden">
+                    <!-- Player Name -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="  name" class="mr-2">Player Name:</label>
+                        <input type="text" id="name" name="name" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Player Photo URL -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="photo" class="mr-2">Player Photo URL:</label>
+                        <input type="url" id="photo" name="photo" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Position -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="position" class="mr-2">Position:</label>
+         
+                        <select name="position" id="position" required class="p-2 bg-stone-700 text-white rounded self-stretch">
+                            <option value="GK">GK</option>
+                            <option value="LB">LB</option>
+                            <option value="CB">CB</option>
+                            <option value="RB">RB</option>
+                            <option value="CM">CM</option>
+                            <option value="CDM">CDM</option>
+                            <option value="LW">LW</option>
+                            <option value="ST">ST</option>
+                            <option value="RW">RW</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Nationality -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="nationality" class="mr-2">Nationality:</label>
+                        <input type="text" id="nationality" name="nationality" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Flag URL -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="flag" class="mr-2">Flag URL:</label>
+                        <input type="url" id="flag" name="flag" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Club -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="club" class="mr-2">Club:</label>
+                        <input type="text" id="club" name="club" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Club Logo URL -->
+                    <div class="flex flex-col gap-2  items-center">
+                        <label for="logo" class="mr-2">Club Logo URL:</label>
+                        <input type="url" id="logo" name="logo" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="col-span-2 text-center mt-4">
+                        <button class="bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ajouter un Joueur</button>
+                        <button class="btn-close-form bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    </div>
+                </form>
+                <form class="form-modify-player text-xs lg:text-lg mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900 grid grid-cols-2 gap-4 text-white p-6 p-4 hidden rounded-md">
+                    <!-- Rating -->
+                    <div class="flex flex-col items-center ">
+                        <img/>
+                        <h2 class="name"></h2>
+                        </div>
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="rating" class="mr-2">Rating:</label>
+                        <input type="number" id="rating" name="rating"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Pace -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="pace" class="mr-2">Pace:</label>
+                        <input type="number" id="pace" name="pace"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Shooting -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="shooting" class="mr-2">Shooting:</label>
+                        <input type="number" id="shooting" name="shooting"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Passing -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="passing" class="mr-2">Passing:</label>
+                        <input type="number" id="passing" name="passing"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Dribbling -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="dribbling" class="mr-2">Dribbling:</label>
+                        <input type="number" id="dribbling" name="dribbling"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Defending -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="defending" class="mr-2">Defending:</label>
+                        <input type="number" id="defending" name="defending"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Physical -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="physical" class="mr-2">Physical:</label>
+                        <input type="number" id="physical" name="physical"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Submit and Cancel Buttons -->
+                    <div class="col-span-2 text-center mt-4">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                        <button class="btn-delete-player bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <button class="btn-close-form bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                        
+                    </div>
+                </form>
+                <form class="form-modify-keeper mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900 grid grid-cols-2 gap-4 text-white p-6 p-4 hidden rounded-md">
+                    <!-- Rating -->
+                    <div class="flex flex-col items-center ">
+                        <img/>
+                        <h2 class="name"></h2>
+                        </div>
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="rating" class="mr-2">Rating:</label>
+                        <input type="number" id="rating" name="rating"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Pace -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="pace" class="mr-2">Diving:</label>
+                        <input type="number" id="diving" name="pace"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Shooting -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="shooting" class="mr-2">Handling:</label>
+                        <input type="number" id="handling" name="shooting"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Passing -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="passing" class="mr-2">kicking:</label>
+                        <input type="number" id="kicking" name="passing"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Dribbling -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="dribbling" class="mr-2">Reflexes:</label>
+                        <input type="number" id="reflexes" name="dribbling"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Defending -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="defending" class="mr-2">Speed:</label>
+                        <input type="number" id="speed" name="defending"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Physical -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <label for="physical" class="mr-2">Positioning:</label>
+                        <input type="number" id="positioning" name="physical"  min="1" max="100" required class="p-2 bg-stone-700 text-white rounded">
+                    </div>
+                
+                    <!-- Submit and Cancel Buttons -->
+                    <div class="col-span-2 text-center mt-4">
+                        <button type="submit" class="bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                        <button class="btn-delete-player bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <button class="btn-close-form bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                        
+                    </div>
+                </form>
+                <div>
+
+                    <button  class='btn-add-player text-white w-fit bg-[#9cff1e] mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20 rounded-lg'>Ajouter un Joueur</button>
+                    <a href="index.html" class='btn-add-player text-white w-fit bg-[#9cff1e] mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20 rounded-lg'>Accueil</a>
+                </div>
+                <div class="players-container max-w-[700px] mx-auto  pt-14 flex justify-center flex-wrap gap-4  ">
+                    
+                </div>
+            </main>
+        </div>
+    <script src="assets/js/players.js"></script>
+</body>
+</html>
