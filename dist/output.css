@@ -667,8 +667,7 @@ video {
 
 .end-1{
   inset-inline-end: 0.25rem;
-}
-
+  
 .left-1\/2{
   left: 50%;
 }
@@ -679,7 +678,7 @@ video {
 
 .top-full{
   top: 100%;
-}
+
 
 .isolate{
   isolation: isolate;
@@ -688,6 +687,7 @@ video {
 .isolation-auto{
   isolation: auto;
 }
+
 
 .z-10{
   z-index: 10;
@@ -751,9 +751,11 @@ video {
 }
 
 .mx-auto{
+=======
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .my-10{
   margin-top: 2.5rem;
@@ -957,6 +959,7 @@ video {
 }
 
 .shrink{
+
   flex-shrink: 1;
 }
 
@@ -1991,7 +1994,12 @@ video {
 
 .bg-gray-500{
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-700{
@@ -1999,9 +2007,11 @@ video {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
 }
 
+
 .bg-gray-800{
+
   --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+  background-color: rgb(68 64 60 / var(--tw-bg-opacity, 1));
 }
 
 .bg-slate-600{
@@ -2266,6 +2276,7 @@ video {
 }
 
 .text-2xl{
+
   font-size: 1.5rem;
   line-height: 2rem;
 }
@@ -2359,6 +2370,7 @@ video {
 .text-\[\#336699\]\/\[\.35\]{
   color: rgb(51 102 153 / .35);
 }
+
 
 .text-\[\#9cff1e\]{
   --tw-text-opacity: 1;
@@ -2573,6 +2585,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -2688,6 +2701,7 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
 
 .transition-colors{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -2995,6 +3009,7 @@ aside::-webkit-scrollbar-thumb {
   }
 }
 
+
 .hover\:bg-blue-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
@@ -3002,8 +3017,9 @@ aside::-webkit-scrollbar-thumb {
 
 .hover\:bg-gray-700:hover{
   --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
 }
+
 
 .hover\:bg-slate-600:hover{
   --tw-bg-opacity: 1;
@@ -3088,6 +3104,7 @@ aside::-webkit-scrollbar-thumb {
   .sm\:items-stretch{
     align-items: stretch;
   }
+
 
   .sm\:gap-1{
     gap: 0.25rem;
@@ -3184,6 +3201,7 @@ aside::-webkit-scrollbar-thumb {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
 }
 
 @media (prefers-color-scheme: dark){
