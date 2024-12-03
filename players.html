@@ -7,11 +7,67 @@
     <title>fut</title>
 </head>
 <body>
-    <header class=" bg-black fixed left-0 top-0 w-full z-10">
+    <header class="p-4 bg-black text-[#9cff1e] shadow-md">
+        <div class="flex justify-between items-center">
+            <!-- logo -->
+            <div class="flex items-center">
+                <img src="logo.png" alt="Logo" class="w-28 md:w-40">
+            </div>
 
-        <div class="flex justify-between py-4 px-10 sm:px-20 mx-auto max-w-screen-xl text-white">
-            <div class="logo text-xl font-semibold font-roboto"><img src="logo.png" alt="Logo" width="150px" ></div>
-            
+            <!-- mobile respo -->
+            <div class="flex md:hidden items-center space-x-4 relative">
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-search"></i></button> <!-- Search icon -->
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button> <!-- Profile icon -->
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button> <!-- Notification icon -->
+                <button id="menuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+
+                <!-- mobile menu -->
+                <nav id="mobileMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                    <ul class="flex flex-col space-y-2 p-2">
+                        <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                        <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- tablet respo -->
+            <div class="hidden md:flex lg:hidden items-center space-x-4 w-full pl-10 relative">
+                <input type="text" placeholder="Rechercher..." class="flex-grow px-2 py-1 rounded-md bg-gray-500">
+                <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+                <button id="tabletMenuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+
+                <!-- tablet menu -->
+                <nav id="tabletMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                    <ul class="flex flex-col space-y-2 p-2">
+                        <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                        <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- desktop respo -->
+            <nav class="hidden lg:flex items-center space-x-6 pl-8 pr-8">
+                <a href="#" class="hover:text-blue-300">Home</a>
+                <a href="#" class="hover:text-blue-300">Créer une Équipe</a>
+                <a href="#" class="hover:text-blue-300">Tactiques</a>
+                <a href="#" class="hover:text-blue-300">Joueurs</a>
+                <a href="#" class="hover:text-blue-300">À propos</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <input type="text" placeholder="Rechercher..." class="px-2 py-1 rounded-md bg-gray-500 text-[#9cff1e]">
+                <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+            </div>
         </div>
     </header>
         <div class="cnt max-w-[1280px] mx-auto">
@@ -72,8 +128,9 @@
                     
                     <!-- Submit Button -->
                     <div class="col-span-2 text-center mt-4">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Player</button>
-                        <button class="btn-close-form bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+
+                        <button class="bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ajouter un Joueur</button>
+                        <button class="btn-close-form bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
                     </div>
                 </form>
                 <form class="form-modify-player text-xs lg:text-lg mt-20 absolute left-1/2 translate-x-[-50%] z-50 bg-stone-900 grid grid-cols-2 gap-4 text-white p-6 p-4 hidden rounded-md">
@@ -127,7 +184,7 @@
                     <div class="col-span-2 text-center mt-4">
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
                         <button class="btn-delete-player bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-                        <button class="btn-close-form bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+                        <button class="btn-close-form bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
                         
                     </div>
                 </form>
@@ -180,22 +237,25 @@
                 
                     <!-- Submit and Cancel Buttons -->
                     <div class="col-span-2 text-center mt-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-                        <button class="btn-delete-player bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
-                        <button class="btn-close-form bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
+
+                        <button type="submit" class="bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+                        <button class="btn-delete-player bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                        <button class="btn-close-form bg-[#9cff1e] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
                         
                     </div>
                 </form>
                 <div>
 
-                    <button  class='btn-add-player text-white w-fit bg-black mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20'>Add Player</button>
-                    <a href="index.html" class='btn-add-player text-white w-fit bg-black mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20'>Back to Formation</a>
+
+                    <button  class='btn-add-player text-white w-fit bg-[#9cff1e] mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20 rounded-lg'>Ajouter un Joueur</button>
+                    <a href="index.html" class='btn-add-player text-white w-fit bg-[#9cff1e] mx-auto p-2 hover:bg-slate-600 transition-colors text-lg mt-20 rounded-lg'>Accueil</a>
                 </div>
                 <div class="players-container max-w-[700px] mx-auto  pt-14 flex justify-center flex-wrap gap-4  ">
                     
                 </div>
             </main>
         </div>
-    <script src="assets/js/player.js"></script>
+
+    <script src="assets/js/players.js"></script>
 </body>
 </html>

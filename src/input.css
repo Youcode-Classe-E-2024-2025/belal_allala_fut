@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 body {
-    background-image: url(../assets/images/bb.jpg);
-    background-size: cover;
+    background-color: #111;
 }
 .main-app {
     position: relative;
@@ -52,9 +55,9 @@ body {
     position: relative;
     width:75px;
     height:135px;
-    background-image: url(https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png);
-    background-position: center center;
-    background-size:100% 100%;
+    background-image: url(https://cdn3.futbin.com/content/fifa25/img/cards/hd/105_uecl_rttk.png?fm=png&ixlib=java-2.1.0&w=644&s=28bc66f6473b7854e1f66673652809d2);
+    background-size: cover;
+    background-position: center ;
     background-repeat: no-repeat;
 
     z-index: 2;
@@ -193,6 +196,10 @@ aside::-webkit-scrollbar-thumb {
 }
 
 .formation-layout {
-    background-image: url(../assets/images/sb.webp);
-    background-size: contain;
+    width: auto;
+    aspect-ratio: 1 / 1.51;
+    background-image: url(https://th.bing.com/th/id/R.9d00393d2513bb3ddda9748bc5d76000?rik=tXCh%2fhIRElrVwQ&riu=http%3a%2f%2fcliparts.co%2fcliparts%2f6cy%2fo8X%2f6cyo8XMri.png&ehk=tyP2Bcq8Ivtra9soON1RvxVPPnCbU7T5VCAcHCYozo4%3d&risl=&pid=ImgRaw&r=0);
+    background-size: cover;
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center;
 }

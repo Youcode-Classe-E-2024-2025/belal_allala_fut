@@ -5,50 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/output.css">
     <title>fut</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
-        <div class="cnt  mx-auto">
-            <header class=" bg-black fixed left-0 top-0 w-full z-10">
-
-                <div class="flex justify-between py-4 px-10 sm:px-20 mx-auto max-w-screen-xl text-white">
-                    <div class="logo text-xl font-semibold font-roboto"><img src="logo.png" alt="Logo" width="150px" ></div>
-                    
+<body class="bg-black">
+            <header class="p-4 bg-black text-[#9cff1e] shadow-md">
+                <div class="flex justify-between items-center">
+                    <!-- logo -->
+                    <div class="flex items-center">
+                        <img src="logo.png" alt="Logo" class="w-28 md:w-40">
+                    </div>
+        
+                    <!-- mobile respo -->
+                    <div class="flex md:hidden items-center space-x-4 relative">
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-search"></i></button> <!-- Search icon -->
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button> <!-- Profile icon -->
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button> <!-- Notification icon -->
+                        <button id="menuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+        
+                        <!-- mobile menu -->
+                        <nav id="mobileMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                            <ul class="flex flex-col space-y-2 p-2">
+                                <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                                <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                                <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                                <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                                <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+        
+                    <!-- tablet respo -->
+                    <div class="hidden md:flex lg:hidden items-center space-x-4 w-full pl-10 relative">
+                        <input type="text" placeholder="Rechercher..." class="flex-grow px-2 py-1 rounded-md bg-gray-500">
+                        <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+                        <button id="tabletMenuToggle" class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700">☰</button> <!-- Menu icon -->
+        
+                        <!-- tablet menu -->
+                        <nav id="tabletMenu" class="absolute hidden bg-gray-700 text-[#9cff1e] w-40 rounded-md shadow-md top-full">
+                            <ul class="flex flex-col space-y-2 p-2">
+                                <li><a href="#" class="hover:text-blue-300">Home</a></li>
+                                <li><a href="#" class="hover:text-blue-300">Créer une Équipe</a></li>
+                                <li><a href="#" class="hover:text-blue-300">Tactiques</a></li>
+                                <li><a href="#" class="hover:text-blue-300">Joueurs</a></li>
+                                <li><a href="#" class="hover:text-blue-300">À propos</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+        
+                    <!-- desktop respo -->
+                    <nav class="hidden lg:flex items-center space-x-6 pl-8 pr-8">
+                        <a href="#" class="hover:text-blue-300">Home</a>
+                        <a href="#" class="hover:text-blue-300">Créer une Équipe</a>
+                        <a href="#" class="hover:text-blue-300">Tactiques</a>
+                        <a href="#" class="hover:text-blue-300">Joueurs</a>
+                        <a href="#" class="hover:text-blue-300">À propos</a>
+                    </nav>
+        
+                    <div class="hidden lg:flex items-center space-x-4">
+                        <input type="text" placeholder="Rechercher..." class="px-2 py-1 rounded-md bg-gray-500 text-[#9cff1e]">
+                        <button class="px-4 py-1 bg-[#9cff1e] text-white rounded-md">Search</button>
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-person"></i></button>
+                        <button class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700"><i class="bi bi-bell"></i></button>
+                    </div>
                 </div>
             </header>
-            <main class="main-app w-full flex flex-col sm:flex-row relative">
-                <div class="formation sm:basis-[75%] lg:basis-[80%] pt-7  sm:h-[100dvh] overflow-auto">
+                <form class="formation-form  px-8 sm:px-4 sm:pt-20" >
+                    <div class="flex flex-col items-center justify-center text-center rounded-lg  gap-2  sm:items-stretch sm:flex-col ">
+                        <div>
+                        <label class="text-white text-center text-xs sm:text-base lg:text-lg sm:mb-4">Select Formation :</label>
+                        <select class="formation-selection text-xs lg:text-base w-[300PX]">
+                            <option class="text-inherit" value="">Select Formation:</option>
+                            <option class="text-inherit" value="3-1-4-2">3-1-4-2</option>
+                            <option class="text-inherit" value="4-4-2">4-4-2</option>
+                            <option class="text-inherit" value="5-3-2">5-3-2</option>
+                            <option class="text-inherit" value="3-4-2-1">3-4-2-1</option>
+                            <option class="text-inherit" value="4-1-4-1">4-1-4-1</option>
+                            <option class="text-inherit" value="4-2-4">4-2-4</option>
+                            <option class="text-inherit" value="4-5-1">4-5-1</option>
+                            <option class="text-inherit" value="5-4-1">5-4-1</option>
+                            <option class="text-inherit" value="4-2-1-3">4-2-1-3</option>
+                            <option class="text-inherit" value="4-1-3-2">4-1-3-2</option>
+                            <option class="text-inherit" value="4-3-3">4-3-3</option>
+                            <option class="text-inherit" value="3-5-2">3-5-2</option>
+                        </select>
+                        </div>
+                        <a href="./players.html" class=' text-white w-fit bg-[#9cff1e] mx-0 sm:mx-auto p-2 hover:bg-slate-600 transition-colors sm:mt-2 text-xs sm:text-sm lg:text-lg ml-auto mb-10 rounded-lg'>gestion des Joueurs</a>    
+                    </div>
+                    <ul class="p-4 sm:p-0 overflow-auto absolute z-10 top-20 left-1/2 w-[400px] h-[655px] bg-black bg-opacity-50 sm:bg-transparent sm:w-full translate-x-[-50%] sm:translate-x-0 sm:static change-players flex-wrap justify-center flex-col text-center mt-5 mb-5 gap-4 sm:gap-1 hidden">
+                    </ul>
+                </form>
+
+                <div class="formation sm:basis-[75%] lg:basis-[80%] pt-7  sm:h-[100dvh] ">
                     <div class="formation-layout mx-auto w-[400px] h-[675px]  relative flex flex-col justify-center rounded-md my-10">
                     </div>
                 </div>
-                <aside class="sidebar py-2 bg-[#0101017d]  flex-shrink-0 order-[-1] sm:order-1 sm:basis-[25%] lg:basis-[20%] h-fit sm:h-[calc(100dvh-64px)] overflow-y-auto mt-16 sm:mt-0">
-                    <form class="formation-form flex flex-col px-8 sm:px-4 sm:pt-20">
-                        <div class="flex flex-row gap-2 items-center sm:items-stretch sm:flex-col ">
-                            <label class="text-white text-center text-xs sm:text-base lg:text-lg sm:mb-4">Select Formation :</label>
-                            <select class="formation-selection text-xs lg:text-base">
-                                <option class="text-inherit" value="">Select Formation:</option>
-                                <option class="text-inherit" value="3-1-4-2">3-1-4-2</option>
-                                <option class="text-inherit" value="4-4-2">4-4-2</option>
-                                <option class="text-inherit" value="5-3-2">5-3-2</option>
-                                <option class="text-inherit" value="3-4-2-1">3-4-2-1</option>
-                                <option class="text-inherit" value="4-1-4-1">4-1-4-1</option>
-                                <option class="text-inherit" value="4-2-4">4-2-4</option>
-                                <option class="text-inherit" value="4-5-1">4-5-1</option>
-                                <option class="text-inherit" value="5-4-1">5-4-1</option>
-                                <option class="text-inherit" value="4-2-1-3">4-2-1-3</option>
-                                <option class="text-inherit" value="4-1-3-2">4-1-3-2</option>
-                                <option class="text-inherit" value="4-3-3">4-3-3</option>
-                                <option class="text-inherit" value="3-5-2">3-5-2</option>
-                            </select>
-                            <a href="./players.html" class=' text-white w-fit bg-black mx-0 sm:mx-auto p-2 hover:bg-slate-600 transition-colors sm:mt-2 text-xs sm:text-sm lg:text-lg ml-auto'>Manage Players</a>    
-                        </div>
-                        <ul class="p-4 sm:p-0 overflow-auto absolute z-10 top-20 left-1/2 w-[400px] h-[655px] bg-black bg-opacity-50 sm:bg-transparent sm:w-full translate-x-[-50%] sm:translate-x-0 sm:static change-players flex-wrap justify-center flex-col text-center mt-5 mb-5 gap-4 sm:gap-1 hidden">
-                        </ul>
-                    </form>
-                    
-                </aside>
-            </main>
-        </div>
-    <script src="assets/js/data.js"></script>
+
+                
+    <script src="assets/data/data.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/drag&drop.js"></script>
 </body>
